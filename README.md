@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Additional Packages
+
+REACT TRANSITION GROUP - https://reactcommunity.org/react-transition-group/
+`npm install react-transition-group --save`
+AXIOS - https://axios-http.com/ru/docs/intro
+`npm i axios`
+GETTING POSTS - https://jsonplaceholder.typicode.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
