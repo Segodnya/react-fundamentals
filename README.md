@@ -4,11 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Additional Packages
 
-REACT TRANSITION GROUP - https://reactcommunity.org/react-transition-group/
-`npm install react-transition-group --save`
-AXIOS - https://axios-http.com/ru/docs/intro
-`npm i axios`
-GETTING POSTS - https://jsonplaceholder.typicode.com/
+- REACT TRANSITION GROUP - https://reactcommunity.org/react-transition-group/
+  `npm install react-transition-group --save`
+- AXIOS - https://axios-http.com/ru/docs/intro
+  `npm i axios`
+- GETTING POSTS - https://jsonplaceholder.typicode.com/
 
 ## Available Scripts
 
