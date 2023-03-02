@@ -9,13 +9,20 @@ import "./styles/App.css";
 import MyModal from "./components/UI/MyModal/MyModal.jsx";
 import MyButton from "./components/UI/button/MyButton.jsx";
 import { usePosts } from "./hooks/usePosts.js";
-import axios from "axios";
+import { useFetching } from "./hooks/useFetching.js";
+import PostService from "./API/PostService.js";
+import Loader from "./components/UI/Loader/Loader.jsx";
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: "", query: "" });
   const [modal, setModal] = useState(false);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+
+  const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
+    const posts = await PostService.getAll();
+    setPosts(posts);
+  });
 
   useEffect(() => {
     fetchPosts();
@@ -25,13 +32,6 @@ function App() {
     setPosts([...posts, newPost]);
     setModal(false);
   };
-
-  async function fetchPosts() {
-    const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts"
-    );
-    setPosts(response.data);
-  }
 
   // Получаем post из дочернего элемента
   const removePost = (post) => {
@@ -54,11 +54,20 @@ function App() {
       {/* <PostsList posts={posts2} title="Футбольные клубы" /> */}
       <hr style={{ margin: "15px 0" }} />
       <PostFilter filter={filter} setFilter={setFilter} />
-      <PostsList
-        remove={removePost}
-        posts={sortedAndSearchedPosts}
-        title="Языки программирования"
-      />
+      {postError && <h1>Произошла ошибка ${postError}</h1>}
+      {isPostsLoading ? (
+        <div
+          style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
+        >
+          <Loader />
+        </div>
+      ) : (
+        <PostsList
+          remove={removePost}
+          posts={sortedAndSearchedPosts}
+          title="Языки программирования"
+        />
+      )}
     </div>
   );
 }
