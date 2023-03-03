@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - AXIOS - https://axios-http.com/ru/docs/intro
   `npm i axios`
 - GETTING POSTS - https://jsonplaceholder.typicode.com/
+- REACT ROUTER - https://v5.reactrouter.com/web/guides/quick-start
 
 ## Available Scripts
 
