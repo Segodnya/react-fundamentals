@@ -10,6 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   `npm i axios`
 - GETTING POSTS - https://jsonplaceholder.typicode.com/
 - REACT ROUTER - https://v5.reactrouter.com/web/guides/quick-start
+- INTERSECTION OBSERVER API - https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
 ## Available Scripts
 

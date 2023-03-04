@@ -20,13 +20,26 @@ import Posts from "./pages/Posts.jsx";
 import Navbar from "./components/UI/Navbar/Navbar.jsx";
 import Error from "./pages/Error.jsx";
 import AppRouter from "./components/AppRouter.jsx";
+import { AuthContext } from "./context/context.js";
 
 function App() {
+  const [isAuth, setIsAuth] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.getItem("auth")) {
+      setIsAuth(true);
+    }
+    setIsLoading(false);
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Navbar />
-      <AppRouter />
-    </BrowserRouter>
+    <AuthContext.Provider value={{ isAuth, setIsAuth, setIsLoading }}>
+      <BrowserRouter>
+        <Navbar />
+        <AppRouter />
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 
