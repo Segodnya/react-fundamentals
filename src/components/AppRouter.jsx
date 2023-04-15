@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import About from "../pages/About.jsx";
 import Posts from "../pages/Posts.jsx";
-import Error from "../pages/Error.jsx";
 import Login from "../pages/Login.jsx";
-import PostIdPage from "../pages/PostIdPage.jsx";
 import { privateRoutes, publicRoutes } from "../router/routes.js";
 import { AuthContext } from "../context/context.js";
 import Loader from "./UI/Loader/Loader.jsx";

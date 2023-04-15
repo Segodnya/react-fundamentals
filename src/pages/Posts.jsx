@@ -1,6 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import ClassCounter from "../components/ClassCounter.jsx";
-import Counter from "../components/Counter.jsx";
 import PostsList from "../components/PostList.jsx";
 import MyButton from "../components/UI/button/MyButton.jsx";
 import PostForm from "../components/PostForm.jsx";
@@ -56,8 +54,6 @@ function Posts() {
     setPage(page);
   };
 
-  /* const bodyInputRef = useRef(); */
-
   return (
     <div className="App">
       <MyButton onClick={fetchPosts}>GET POSTS</MyButton>
@@ -67,9 +63,6 @@ function Posts() {
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm create={createPost} />
       </MyModal>
-      <Counter />
-      <ClassCounter />
-      {/* <PostsList posts={posts2} title="Футбольные клубы" /> */}
       <hr style={{ margin: "15px 0" }} />
       <PostFilter filter={filter} setFilter={setFilter} />
       <MySelect
